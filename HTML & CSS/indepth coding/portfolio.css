@@ -1,0 +1,67 @@
+body{
+    background-color: rgb(203, 231, 231);
+}
+.img1{
+    padding-left: 30%;
+    width:50%;
+    height:20vh;
+}
+nav{
+    background-color: rgb(30, 21, 12);
+    font-size: x-large;
+    text-align: center;
+    word-spacing: 5px;
+    border-radius: 10px;
+    width:90%;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 20px;
+    color:white;
+    margin-left: 80px;
+}
+.main_div{
+    background-image: url("images12.jfif");
+    border-radius: 10px;
+    width: 90%;
+    height: 20vh;
+    padding-left: 60px;
+    margin:30px;
+    background-repeat: no-repeat;
+    color: rgb(178, 26, 26);
+    background-size: cover;
+    
+}
+td{   
+    width:80px;
+    height:60vh;
+    border-radius: 50px;
+    background-color: palevioletred;
+    margin:40px;
+}
+table{
+    padding: 50px 40px 40px 200px;
+    border-spacing: 60px;
+    position: absolute;
+    top: 300px;
+    
+}
+footer{
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    top: 800px;
+    /* border: 1px solid black; */
+
+}
+.foot{
+    text-align:right;
+    /* text-align: center; */
+    
+}
+.line{
+    border-top: 5px solid black;
+    width:50%;
+    float: right;
+}
+
+

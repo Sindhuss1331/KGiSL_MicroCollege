@@ -1,0 +1,26 @@
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+div{
+    background: url("foodss.webp");
+    background-size: 80;
+    height: 800vh;
+    background-size: cover;
+    text-align: center;
+    padding-top: 10%;
+    font-family: "Pacifico";
+}
+.div{
+    width: 80%;
+    height: 100vh;
+    color:white;
+    padding-left:20% 30%;
+    padding-top: 30% 30%;
+    font-style: googleapis;
+    font-size: xx-large;
+    margin: 70px;
+}
+button{
+    -webkit-background-clip: text;
+    color: white;
+    padding: 2%;
+    border-color: white;
+}

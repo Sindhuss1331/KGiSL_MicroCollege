@@ -1,0 +1,21 @@
+body{
+    background-color:aqua;
+}
+h1{
+    font-size:22px;
+    color:blueviolet;
+    background-color: blanchedalmond;
+}
+
+h2{
+    font-style:italic;
+    font-size: 40px;
+    color:rgb(27, 27, 59);
+}
+dl{
+    font-size: 20px;
+    color:rgb(71, 49, 49);
+    background-color: rgb(44, 229, 167);
+}
+
+    

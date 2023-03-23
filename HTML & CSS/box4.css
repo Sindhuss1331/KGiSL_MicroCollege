@@ -1,0 +1,20 @@
+body{
+    padding:30%;
+    
+}
+.boxcreat{
+    
+    padding: 50px; 
+    width:100%;
+    background-color: blue;
+    color:white;
+} 
+.name{
+    width: 80%;
+    height:25px;
+    background-color: blue;
+    background: transparent; 
+}
+.but{
+    background-color: orange;
+}

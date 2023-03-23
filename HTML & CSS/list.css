@@ -1,0 +1,31 @@
+ol li{
+    list-style: georgian;
+    color: blue;
+    font-style: oblique;
+    list-style-position: inside;
+    font-size: x-large;
+}
+ul li{
+    /* list-style-type: lower-greek; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: brown;
+}
+.html{
+    list-style-image: url(html-5);
+    }
+.list li{
+     list-style-position: inside;
+}
+.css{
+    list-style-image: url(css);
+}
+.js{
+    list-style-image: url(javascript);
+}
+.my{
+    list-style-image: url(mysql.png);
+}
+.cj{
+    list-style-image: url(core-java.png);
+}

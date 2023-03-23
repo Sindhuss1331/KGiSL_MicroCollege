@@ -1,0 +1,21 @@
+body{
+    background-color: blueviolet;
+}
+div{
+    background: url(rose.webp);
+    background-size: cover;
+    padding:20px 20px 30px 30px;
+    margin: 30% 40% 25% 30%;
+   width:600px;
+   height:400px;
+   color: rgb(130, 45, 35);
+}
+button{
+    background-color: red;
+}
+h1{
+    font-size: 500%;
+}
+h3{
+    padding-top: 30px;
+}

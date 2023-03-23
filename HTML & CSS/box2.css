@@ -1,0 +1,34 @@
+body{
+    background-color: palevioletred;
+}
+.boxcreat{
+    padding: 250px;
+    
+}
+table{
+    border-color: none;
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+}
+.hold{
+    background-color: palevioletred;
+    text-align: center;
+    border:none;
+}
+.form{
+    width: 400px;
+    height: 400px;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
+    padding: 2px;
+    
+
+}
+#join{
+    padding-top: 1px;
+}
+
+
+

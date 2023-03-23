@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(48, 63, 63);
+}
+div{
+    width:400px;
+    height: 250px;
+    border: 2px solid white;
+    background-color: rgb(229, 220, 171);
+    padding: 4s0px;
+    margin: 250px;
+    font-size: 20px;
+}

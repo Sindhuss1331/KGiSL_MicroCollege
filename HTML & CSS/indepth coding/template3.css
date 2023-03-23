@@ -1,0 +1,11 @@
+body{
+    padding-top: 10%;
+    padding-left: 20%;
+    background-color: blanchedalmond;
+}
+.img1{
+    transform: rotate(45deg);
+}
+.img2{
+    transform: rotate(-45deg);
+}

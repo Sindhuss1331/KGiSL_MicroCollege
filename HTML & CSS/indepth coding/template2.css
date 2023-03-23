@@ -1,0 +1,28 @@
+body{
+    background-image: url(pexel22.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+p{
+    font-variant: capitalize;
+    text-align: center;
+    font-size: 90px;
+    padding: 70px 40px 40px 30px;
+    color: white;
+}
+center{
+    font-size:30px ;
+    padding-top: 0px;
+    color: white;
+}
+button{
+    background-color: rgb(39, 240, 247);
+    border: none;
+    padding: 10px;
+}
+#btn{
+    border-radius:20px;
+}
+a{
+    color: brown;
+}

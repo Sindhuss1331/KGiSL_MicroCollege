@@ -1,0 +1,19 @@
+table,th,td{
+    border: 2px solid;
+    border-collapse: collapse;
+    padding: 20px;
+    text-align: center;
+    border:groove 10px block;
+}
+.td{
+    text-align: center;
+
+}
+.head{
+    text-align: center;
+}
+body{
+    padding-left: 400px;
+    padding-top: 70px;
+}
+

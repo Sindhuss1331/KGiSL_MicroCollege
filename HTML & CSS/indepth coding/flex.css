@@ -1,0 +1,51 @@
+body{
+    background-color: aquamarine;
+    /* display: block; */
+}
+/* .class{
+    /* display: inline; */
+    /* display:inline-block; */
+    /* display: block; */
+    /* float:right;
+
+p{
+    background-color: blueviolet;
+    /* display: inline-block; */
+    /* height: 30px;
+    width: 200px; */
+
+/* img{
+    
+} */
+/* .img1{
+    position:absolute;
+    top:20px;
+    z-index: -1;
+}  */
+.flex{
+    display: flex;
+    padding-top: 40px;
+    margin-left:20px;
+}
+.class{   
+    box-shadow: 6px 7px 8px 9px rgb(9, 0, 128);
+    width:60%; 
+    margin-left:30px; 
+    background-color: rgb(165, 42, 46); 
+}
+.loosu{  
+    box-shadow: 6px 7px 8px 9px rgb(9, 0, 128);
+    width:60%; 
+    margin-left:30px; 
+    background-color: rgb(165, 42, 46); 
+}
+.class3{ 
+    box-shadow: 6px 7px 8px 9px rgb(9, 0, 128);
+    width:60%;   
+    margin-left:30px; 
+    background-color: rgb(165, 42, 46);     
+}
+.class:hover{
+    opacity:0.2;
+
+}

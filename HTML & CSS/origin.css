@@ -1,0 +1,16 @@
+body{
+    background: url("nature.webp");
+    background-size: cover;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10%;
+    
+}
+.ppp{
+    width: 80%;
+    
+}
+.but{
+    -webkit-background-clip: text;
+    border-color: white;
+}

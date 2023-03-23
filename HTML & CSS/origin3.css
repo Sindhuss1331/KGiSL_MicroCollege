@@ -1,0 +1,30 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Pacifico&family=Sofia&display=swap');
+
+#flor{
+    background:url('shop.jpeg');
+    height: 50vh;
+    width: 95%;
+    background-size: cover;
+}
+#head1{
+    text-align: right;
+    color: rgb(15, 14, 17);
+    line-height: 4px;
+    padding-top: 30px;
+    font-family: "Creepster";
+    font-size: xx-large;
+    
+}
+.para{
+    text-align: left;
+    color: black;
+    padding-left: 200px;
+    
+}
+body{
+    margin-left:5%;
+}
+span{
+    font-size: xx-large;
+}

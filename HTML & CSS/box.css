@@ -1,0 +1,16 @@
+body{
+    background-color: green;
+}
+.box1{
+    color: white;
+   
+}
+div{
+    width: 200px;
+    border-color: #48ee59 ;
+    border-style: groove;
+    padding: 20px;
+    margin: 200px;
+}
+
+
