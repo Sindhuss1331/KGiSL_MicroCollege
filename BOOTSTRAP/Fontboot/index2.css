@@ -1,0 +1,22 @@
+.nav{
+    float: right;
+    word-spacing: 40px;
+}
+.first{
+    background-color: rgb(69, 69, 81);
+    color: white;
+}
+.jjj{
+    border: 2px solid blue;
+    padding: 3px;
+}
+.body_back{
+    background-color:#191a1d;
+    color: white;
+}
+.navbar{
+    background-color: #9aa5b1 !important;
+}
+.nav-link,.navbar-brand{
+    color: white !important;
+}

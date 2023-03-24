@@ -1,0 +1,14 @@
+/* .sin{
+    background-image: url('https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/hotelbg.png');
+} */
+/* .card-img-overlay {
+    position: absolute !important;
+    top: 15 !important;
+}
+<img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/hotelbg.png" class="card-img" alt="..."> */
+.ggg{
+    border:2px solid black;
+}
+.kkk{
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/hotelbg.png");
+}
