@@ -1,0 +1,54 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            alert("Hello JavaScript");
+            var i=prompt("Enter the input");
+           if(i=="")
+            {
+                alert("Enter input");
+            }
+            else
+            {
+                alert(i);
+            }
+        </script>
+    </head>
+    <body>
+    </body>
+</html>     -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {  
+
+         firstName: 'Monica',
+         
+
+       };
+       
+       Object.defineProperty(student,"lastName",{
+           get : function(){
+               return this.firstName;
+           }
+       });
+       
+       Object.defineProperty(student,"name",{
+           set : function(value){
+               this.firstName = value;
+           }
+       });
+       
+       console.log(student.lastName);
+       student.name = "Sindhu";
+       console.log(student.lastName);
+
+    </script>
+</body>
+</html>

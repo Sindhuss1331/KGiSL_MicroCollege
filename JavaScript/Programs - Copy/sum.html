@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> sum of numbers</title>
+        <script>
+            function sum()
+            {
+                var n1 = parseInt(prompt(document.getElementById("t1")));
+                var n2 = parseInt(promt(document.getElementById("t2")));
+                var n3 = n1+n2;
+                document.getElementById("t3").value = n3;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Adding two numbers</h1>
+        <label> Enter the first number:</label>
+        <input type="text" name="t1" id="t1" placeholder="number"><br>
+        <label> Enter the second number:</label>
+        <input type="text" name="t2" id="t2" placeholder="number"><br>
+
+        <label> Sum of numbers:</label>
+        <input type="text" name="t3" id="t3" placeholder="number"><br>
+
+        <input type="button" value="ADD" onclick="sum()">
+    </body>
+</html>

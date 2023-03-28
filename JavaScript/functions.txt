@@ -1,0 +1,57 @@
+Defining a function
+---------------------------------------
+
+syntax:
+
+function functionname(argumentlist)
+{
+// block of code
+}
+
+Calling a function
+--------------------------------------
+functionname(arguments);
+
+
+Declaration of functions:
+---------------------------------------------
+
+1. function with no arguments and no return value.
+2. function with arguments and no return value.
+3. function with arguments and with return value.
+4. function with no arguments with return value.
+
+
+How do the function return a value?
+
+using return keyword with variable which return any type of value associated it.
+
+example:
+
+return a;
+
+
+
+
+ECMA Script (ES) 6 model
+
+
+REPL commands:
+
+Read Evaluate Print Loop
+
+Read - Console takes single input(read)
+Evaluate - Process the input based on logic
+print - display the output on the screen
+loop - input retain in the console until you press the key from keyboard
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form Creation</title>
+        <script>
+            function add()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("result").innerHTML=no1+no2;
+            }
+            function sub()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("subres").innerHTML=no1-no2;
+            }
+            function multi()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("multify").innerHTML=no1*no2;
+            }
+            function divi()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("divided").innerHTML=no1%no2;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="d1">
+            <table>
+                <form> 
+                    <tr>
+                        <td><label>Enter First number :</label></td>
+                        <td><input type="text" name="addition" id="num1"></td><br>
+                    </tr>
+                    <tr>
+                        <td><label>Enter second number :</label></td>
+                        <td><input type="text" name="number" id="num2"><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Add" onclick="add()">
+                        <input type="button" value="Sub" onclick="sub()">
+                        <input type="button" value="Mul" onclick="multi()">
+                        <input type="button" value="Div" onclick="divi()"></td>
+                    </tr>
+                </form>
+            </table> 
+        </div>
+        <div>
+            <tr>
+                <td><h2>Addition :</h2></td>
+                <td><span id="result"></span></td>
+            </tr>
+            <tr>
+                <td><h2>Subtraction :</h2></td>
+                <td><span id="subres"></span></td>
+            </tr>
+            <tr>
+                <td><h2>Multiplication :</h2></td>
+                <td><span id="multify"></span></td>
+            </tr>
+            <tr>
+                <td><h2>Division :</h2></td>
+                <td><span id="divided"></span></td>
+            </tr>
+        
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dom()
+        {
+            var a = document.getElementById("cartItemTextInput").value;
+
+            var ul = document.getElementById("value");
+            var li = document.createElement("li");
+
+            li.innerText = a;
+            ul.append(li);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Add To Cart</h1>
+            <input type="text" class="form-text col-2" id="cartItemTextInput">
+            <input type="button" value="Add" class="btn btn-primary col-1 ms-4" id="addBtn" onclick="dom()">
+            <h4>My Cart items</h4><br>
+            <ul id="value" type=""></ul>
+        </div>
+    </div>
+    
+</body>
+</html>

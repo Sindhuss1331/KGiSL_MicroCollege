@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Dom </title>
+        <script>
+            function Test()
+            {
+                var un = document.getElementById("un").value;
+                var pw = document.getElementById("pw").value;
+
+                if((un == "kgm") && (pw=="kgm@123"))
+                {
+                    alert("Login successfully");
+                }
+                else if((un != "kgm"))
+                {
+                    alert("Invalid Username");
+                }
+                else{
+                    alert("check your credential");
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Login Page</h1>
+        <form name="form1">
+
+            <label> Username:</label>
+            <input type="text" name="name" id="un"> <br>
+            <label> Password:</label>
+            <input type="password" id="pw"> <br>
+
+            <input type="button" value="Login" onclick="Test()">
+        </form>
+    </body>
+</html>

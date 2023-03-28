@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Events</title>
+    <script>
+
+        function add()
+        {
+            var val = parseInt(document.getElementById("box").value);
+
+            var op = '<option>Numbers</option>';
+
+
+            var sl = document.getElementById("sel");
+
+            for ( var i = 1; i <= val; i++ )
+            {
+                op += ('<option value=' + i + '>' + i + '</option>');
+            }
+
+            sl.innerHTML = op;
+        }
+
+
+        function create()
+        {
+            var val = document.getElementById("sel").value;
+
+            if ( val == "Numbers" )
+            {
+                alert("Select a Number from DropDown");
+            }
+            else
+            {
+                var div = document.getElementById("added");
+                var st ='<label for="noOfUser">Select the No of Users to be Created : </label>';
+                var sl = '<select name="noOfUser" id=Select_Boxof_' + i + '>';
+                var op = '<option>Numbers</option>';
+                for ( var i = 1; i <= val; i++ )
+                {
+                    op += ('<option value=' + i + '>' + i + '</option>');
+                }
+                st += (sl + op + '</select>');
+            }
+            div.innerHTML = st;
+        }
+    </script>
+</head>
+<body onload="dis()">
+    <div>
+        <form>
+            <label>Enter the Numer : </label>
+            <input type="number" id="box" name="box">
+            <input type="button" id="btn" value="Add" onclick="add()" onkeypress="add()">
+            <br>
+            <select id="sel"></select>
+            <input type="button" id="create" value="Create" onclick="create()">
+            <div id="added"></div>
+        </form>
+    </div>
+</body>
+</html>

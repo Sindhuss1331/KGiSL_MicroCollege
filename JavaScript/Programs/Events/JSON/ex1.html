@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ex1()
+        {
+            var name=document.getElementById("name").value;
+            var last=document.getElementById("last").value;
+            var dob=document.getElementById("dob").value;
+            var pwd=document.getElementById("pwd").value;
+            var obj=[{
+                "name" :name,
+                "last" :last,
+                "dob" :dob,
+                "pwd" :pwd,
+            }];
+            for(num in obj)
+            {
+                console.log(obj);
+            }
+            
+        }
+        
+    </script>
+    <form>
+    <label>firstname :</label>
+    <input type="text" name="" id="name" value=""><br>
+    <label>lastname :</label>
+    <input type="text" name="" id="last" value=""><br>
+    <label>dobirth :</label>
+    <input type="text" name="" id="dob" value=""><br>
+    <label>Password :</label>
+    <input type="password" name="" id="pwd" value=""><br>
+    <input type="button" value="click" onclick="ex1()">
+</form>
+</body>
+</html>

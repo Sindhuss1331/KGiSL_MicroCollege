@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        var body = document.getElementsByTagName("body");
+        var div = document.createElement("div");
+        var txt = document.createTextNode("Login Page");
+        var ibox = document.createElement("input");
+        var button = document.createElement("button");
+        var btntxt = document.createTextNode("Click");
+
+        button.append(btntxt);
+        div.append(txt);
+        div.append(ibox);
+        div.append(button);
+        body[0].append(div);
+
+    </script>
+</body>
+</html>

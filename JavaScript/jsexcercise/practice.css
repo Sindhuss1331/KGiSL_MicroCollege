@@ -1,0 +1,29 @@
+#btn_click{
+    text-align: center;
+}
+#output{
+    
+    display: flex;
+}
+#op{
+    background-color: rgb(88, 86, 204);
+    color: white;
+    padding-top: 40px;
+    padding-left: 80px;
+    padding-right: 250px;
+    line-height: 70px;
+    /* border: 2px solid black; */
+    margin-top: 40px;
+    margin-left: 100px;
+}
+#sn{
+    background-color: rgb(88, 86, 204);
+    color: white;
+    padding-left: 80px;
+    padding-right: 200px;
+    padding-top: 40px;
+    line-height: 70px;
+    margin-top: 40px;
+    margin-left: 100px;
+    /* border: 2px solid black; */
+}

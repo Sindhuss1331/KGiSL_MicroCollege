@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function main()
+        {
+            var a=document.getElementById("fir").value;
+            var b=document.getElementById("sec").value;
+            if(a==b)
+            {
+                alert("Data's are equal");
+            }
+            else{
+                alert("Data's are not equal" )
+            }
+        }
+    </script>
+    <label>Enter your password :</label>
+    <input type="text" value="" id="fir"><br><br>
+    <label>Confirm password :</label>
+    <input type="text" value="" id="sec"><br><br>
+    <input type="button" value="click" onclick="main()">
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var a;
+        var c;
+        
+        function btn()
+        {
+            var a=document.getElementById("box").value;
+            var b='<option>select<Option>';
+            var s=document.getElementById("sel");
+
+                for(var i=1;i<=a;i++)
+                {
+                    b+=('<option value='+i+'>'+i+'<option>');
+                }
+                c.innerHTML=b;
+                
+        }
+        function submit()
+        {
+            var ass=document.getElementById("sub").value;
+            
+            if(ass == "select")
+            {
+                alert("Select a Number from DropDown....!");
+            }
+            else{
+                var div = document.getElementById("added");
+                var ds='<label for="noOfUser">Select the No of Users to be Created : </label>';
+                var op = '<option>Numbers</option>';
+                var c= '<select name="noOfUser" id=Select_Boxof_' + i + '>';
+                for(var i=1; i<=a; i++ )
+                
+                {
+                    op += ('<option value=' + i + '>' + i + '</option>');
+                }
+                st += (sl + op + '</select>');
+            }
+            ds.innerHTML = st;
+
+            }
+        
+    </script>
+    <input type="number" id="box" name="box" onclick="inbox()">
+    <input type="button" value="click" name="bn" id="bn" onclick="btn()">
+    <select id="sel"></select>
+    <input type="button" id="sub" onclick="submit()">
+    <div id="added"></div>
+</body>
+</html>

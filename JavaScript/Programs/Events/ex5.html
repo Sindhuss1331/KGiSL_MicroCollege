@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form Creation</title>
+        <script>
+            function add()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("result").innerHTML=no1+no2;
+            }
+            function sub()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("subres").innerHTML=no1-no2;
+            }
+            function multi()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("multify").innerHTML=no1*no2;
+            }
+            function divi()
+            {
+                var no1=parseInt(document.getElementById("num1").value);
+                var no2=parseInt(document.getElementById("num2").value);
+                document.getElementById("divided").innerHTML=no1%no2;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="d1">
+          
+                <form> 
+                  
+                      <label>Enter First number :</label>
+                        <input type="text" name="addition" id="num1"><br>
+                   
+                   
+                       <label>Enter second number :</label>
+                    <input type="text" name="number" id="num2"><br>
+                   
+                  
+                     <input type="button" value="Add" onclick="add()">
+                        <input type="button" value="Sub" onclick="sub()">
+                        <input type="button" value="Mul" onclick="multi()">
+                        <input type="button" value="Div" onclick="divi()">
+                  
+                </form>
+        
+        </div>
+        <div>
+           
+                <h2>Addition :</h2>
+                <span id="result"></span>
+       
+      
+                <h2>Subtraction :</h2>
+                <span id="subres"></span>
+        
+        
+               <h2>Multiplication :</h2>
+              <span id="multify"></span>
+       
+                <h2>Division :</h2>
+                <span id="divided"></span>
+         
+        
+        </div>
+    </body>
+</html>
+            

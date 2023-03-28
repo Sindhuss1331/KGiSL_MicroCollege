@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function main()
+        {
+            var a=document.getElementById("nam").value;
+            var b=document.getElementById("man").value;
+            
+            if(a==""||b==null)
+            {
+                alert("One of your data is empty, kindly fill it and try againsmile");
+                document.getElementById("nam").focus();
+            }
+            else if(b==""||a==null)
+            {
+                alert("One of your data is empty, kindly fill it and try againsmile");
+                document.getElementById("man").focus();
+            }
+            else
+            {
+                alert("your data entered suceessfully");
+            }
+        }
+    </script>
+     <input type="text" value="" id="nam">
+     <input type="text" value="" id="man">
+     <input type="button" value="click" onclick="main()">
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Dom </title>
+        <script>
+            function print()
+            {
+
+                var v1 = document.form1.name.value;
+                alert("Welcome"+v1);
+                document.form1.name1.value = v1;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1">
+            <input type="text" name="name"> <br>
+            <input type="text" name="name1"> <br>
+            <input type="button" value="click" onclick="print()">
+        </form>
+    </body>
+</html>

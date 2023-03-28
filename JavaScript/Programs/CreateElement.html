@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> sum of numbers</title>
+        <script>
+            function cal()
+            {
+                var p1 = document.createElement("p");
+                var txt = document.createTextNode("hi. Good morning.. Today DOM Class");
+
+                p1.appendChild(txt);
+
+                //main div
+                var cdiv = document.getElementById("main");
+                cdiv.appendChild(p1);
+              
+            }
+        </script>       
+    </head>
+    <body>
+        <div id ="main">
+
+        </div>
+        
+    <input type="button" value="click" onclick="cal()" >
+  </body>
+</html>
