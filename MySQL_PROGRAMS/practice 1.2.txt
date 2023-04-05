@@ -1,0 +1,98 @@
+mysql> use practice1;
+Database changed
+mysql> create table players(name char(20),age int,score int);
+Query OK, 0 rows affected (0.02 sec)
+mysql> desc players;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| name  | char(20) | YES  |     | NULL    |       |
+| age   | int      | YES  |     | NULL    |       |
+| score | int      | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+mysql> insert into players values('Raj','26','120');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from players;
++------+------+-------+
+| name | age  | score |
++------+------+-------+
+| Raj  |   26 |   120 |
++------+------+-------+
+1 row in set (0.00 sec)
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from players;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Raj    |   26 |   120 |
+| Ram    |   28 |   125 |
+| Charan |   25 |   173 |
+| Ravan  |   20 |   152 |
++--------+------+-------+
+4 rows in set (0.00 sec)
+ select * from players where name in('Shyam');
++-------+------+-------+
+| name  | age  | score |
++-------+------+-------+
+| Shyam |   30 |    25 |
++-------+------+-------+
+1 row in set (0.00 sec)
+mysql> delete from players where name=('David');
+Query OK, 1 row affected (0.01 sec)
+mysql> select * from players;
++--------+------+-------+
+| name   | age  | score |
++--------+------+-------+
+| Raj    |   26 |   120 |
+| Ram    |   28 |   125 |
+| Charan |   25 |   173 |
+| Ravan  |   20 |   152 |
+| Shyam  |   30 |    25 |
++--------+------+-------+
+5 rows in set (0.00 sec)
+mysql> alter table players add Strike_rate float;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from players;
++--------+------+-------+-------------+
+| name   | age  | score | Strike_rate |
++--------+------+-------+-------------+
+| Raj    |   26 |   120 |        NULL |
+| Ram    |   28 |   125 |        NULL |
+| Charan |   25 |   173 |        NULL |
+| Ravan  |   20 |   152 |        NULL |
+| Shyam  |   30 |    25 |        NULL |
++--------+------+-------+-------------+
+5 rows in set (0.00 sec)
+mysql> select name,age from players;
++--------+------+
+| name   | age  |
++--------+------+
+| Raj    |   26 |
+| Ram    |   28 |
+| Charan |   25 |
+| Ravan  |   20 |
+| Shyam  |   30 |
++--------+------+
+5 rows in set (0.00 sec)
+mysql> alter table players rename column name to full_name;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc players;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| full_name   | char(20) | YES  |     | NULL    |       |
+| age         | int      | YES  |     | NULL    |       |
+| score       | int      | YES  |     | NULL    |       |
+| Strike_rate | float    | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql> drop table players;
+Query OK, 0 rows affected (0.02 sec)

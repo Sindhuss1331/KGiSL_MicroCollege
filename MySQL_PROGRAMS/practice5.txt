@@ -1,0 +1,202 @@
+mysql> use employee;
+Database changed
+mysql> create table aggregation(eno int,ename varchar(30),DOJ date,role char(28),deptno int);
+Query OK, 0 rows affected (0.04 sec)
+mysql> desc aggregation;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| eno    | int         | YES  |     | NULL    |       |
+| ename  | varchar(30) | YES  |     | NULL    |       |
+| DOJ    | date        | YES  |     | NULL    |       |
+| role   | char(28)    | YES  |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into aggregation values(001,'Abii','1999-02-15','nalyst',10);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from aggregation;
++------+-------+------------+--------+--------+
+| eno  | ename | DOJ        | role   | deptno |
++------+-------+------------+--------+--------+
+|    1 | Abii  | 1999-02-15 | nalyst |     10 |
++------+-------+------------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into aggregation values(002,'Arun','1980-06-30','nalyst',20),(003,'Sankar','1981-03-28','clerks',10),(004,'Sudha','1979-03-30','salesman',20),(004,'Sudha','1986-12-31','salesman',10);
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from aggregation;
++------+--------+------------+----------+--------+
+| eno  | ename  | DOJ        | role     | deptno |
++------+--------+------------+----------+--------+
+|    1 | Abii   | 1999-02-15 | nalyst   |     10 |
+|    2 | Arun   | 1980-06-30 | nalyst   |     20 |
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |
++------+--------+------------+----------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from aggregation where DOJ<1980-06-30 or DOJ>1980-12-1980;
++------+--------+------------+----------+--------+
+| eno  | ename  | DOJ        | role     | deptno |
++------+--------+------------+----------+--------+
+|    1 | Abii   | 1999-02-15 | nalyst   |     10 |
+|    2 | Arun   | 1980-06-30 | nalyst   |     20 |
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |
++------+--------+------------+----------+--------+
+5 rows in set, 2 warnings (0.01 sec)
+mysql> select * from aggregation where deptno=10 or deptno=20;
++------+--------+------------+----------+--------+
+| eno  | ename  | DOJ        | role     | deptno |
++------+--------+------------+----------+--------+
+|    1 | Abii   | 1999-02-15 | nalyst   |     10 |
+|    2 | Arun   | 1980-06-30 | nalyst   |     20 |
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |
++------+--------+------------+----------+--------+
+5 rows in set (0.01 sec)
+
+mysql> select * from aggregation where ename like 'S%';
++------+--------+------------+----------+--------+
+| eno  | ename  | DOJ        | role     | deptno |
++------+--------+------------+----------+--------+
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |
++------+--------+------------+----------+--------+
+3 rows in set (0.01 sec)
+
+mysql> select * from aggregation where ename like '%n';
++------+-------+------------+--------+--------+
+| eno  | ename | DOJ        | role   | deptno |
++------+-------+------------+--------+--------+
+|    2 | Arun  | 1980-06-30 | nalyst |     20 |
++------+-------+------------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from aggregation where ename like '_a%';
++------+--------+------------+--------+--------+
+| eno  | ename  | DOJ        | role   | deptno |
++------+--------+------------+--------+--------+
+|    3 | Sankar | 1981-03-28 | clerks |     10 |
++------+--------+------------+--------+--------+
+1 row in set (0.00 sec)
+mysql> select * from aggregation where role;
+Empty set, 5 warnings (0.00 sec)
+
+mysql> select * from aggregation where role;
+Empty set, 5 warnings (0.00 sec)
+mysql> select distinct role from aggregation;
++----------+
+| role     |
++----------+
+| nalyst   |
+| clerks   |
+| salesman |
++----------+
+3 rows in set (0.01 sec)
+
+mysql> insert into aggregation values(5,'Meera','1990-05-18','manager',30),(6,'Uma','1078-06-23','hr',30);
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+mysql> select * from aggregation where role not in('salesman','clerks','analyst');
++------+-------+------------+---------+--------+
+| eno  | ename | DOJ        | role    | deptno |
++------+-------+------------+---------+--------+
+|    1 | Abii  | 1999-02-15 | nalyst  |     10 |
+|    2 | Arun  | 1980-06-30 | nalyst  |     20 |
+|    5 | Meera | 1990-05-18 | manager |     30 |
+|    6 | Uma   | 1078-06-23 | hr      |     30 |
++------+-------+------------+---------+--------+
+4 rows in set (0.00 sec)
+
+mysql> alter table aggregation add salary float;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+mysql> select * from aggregation order by salary;
++------+--------+------------+----------+--------+--------+
+| eno  | ename  | DOJ        | role     | deptno | salary |
++------+--------+------------+----------+--------+--------+
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |  18000 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |  18000 |
+|    1 | Abii   | 1999-02-15 | nalyst   |     10 |  20000 |
+|    2 | Arun   | 1980-06-30 | nalyst   |     20 |  30000 |
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |  45000 |
+|    5 | Meera  | 1990-05-18 | manager  |     30 |  45000 |
+|    6 | Uma    | 1078-06-23 | hr       |     30 |  50000 |
++------+--------+------------+----------+--------+--------+
+7 rows in set (0.00 sec)
+mysql> update aggregation set newsalary=salary+(salary*15/100);
+Query OK, 7 rows affected (0.01 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+mysql> select * from aggregation;
++------+--------+------------+----------+--------+--------+-----------+
+| eno  | ename  | DOJ        | role     | deptno | salary | newsalary |
++------+--------+------------+----------+--------+--------+-----------+
+|    1 | Abii   | 1999-02-15 | nalyst   |     10 |  20000 |     23000 |
+|    2 | Arun   | 1980-06-30 | nalyst   |     20 |  30000 |     34500 |
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |  45000 |     51750 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |  18000 |     20700 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |  18000 |     20700 |
+|    5 | Meera  | 1990-05-18 | manager  |     30 |  45000 |     51750 |
+|    6 | Uma    | 1078-06-23 | hr       |     30 |  50000 |     57500 |
++------+--------+------------+----------+--------+--------+-----------+
+7 rows in set (0.00 sec)
+mysql> select * from aggregation where ename like '___a%';
+Empty set (0.00 sec)
+mysql> select * from aggregation where salary not in('20000','30000');
++------+--------+------------+----------+--------+--------+-----------+
+| eno  | ename  | DOJ        | role     | deptno | salary | newsalary |
++------+--------+------------+----------+--------+--------+-----------+
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |  45000 |     51750 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |  18000 |     20700 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |  18000 |     20700 |
+|    5 | Meera  | 1990-05-18 | manager  |     30 |  45000 |     51750 |
+|    6 | Uma    | 1078-06-23 | hr       |     30 |  50000 |     57500 |
++------+--------+------------+----------+--------+--------+-----------+
+5 rows in set (0.00 sec)
+mysql> select ename,role,DOJ from aggregation where not role in("manager");
++--------+----------+------------+
+| ename  | role     | DOJ        |
++--------+----------+------------+
+| Abii   | nalyst   | 1999-02-15 |
+| Arun   | nalyst   | 1980-06-30 |
+| Sankar | clerks   | 1981-03-28 |
+| Sudha  | salesman | 1979-03-30 |
+| Sudha  | salesman | 1986-12-31 |
+| Uma    | hr       | 1078-06-23 |
++--------+----------+------------+
+6 rows in set (0.00 sec)
+mysql> select ename,DOJ from aggregation where DOJ in('1981-03-28');
++--------+------------+
+| ename  | DOJ        |
++--------+------------+
+| Sankar | 1981-03-28 |
++--------+------------+
+1 row in set (0.01 sec)
+mysql> select * from aggregation where ename='Arun';
++------+-------+------------+--------+--------+--------+-----------+-----------+
+| eno  | ename | DOJ        | role   | deptno | salary | newsalary | incsalary |
++------+-------+------------+--------+--------+--------+-----------+-----------+
+|    2 | Arun  | 1980-06-30 | nalyst |     20 |  30000 |     34500 |    120000 |
++------+-------+------------+--------+--------+--------+-----------+-----------+
+1 row in set (0.00 sec)
+mysql> select * from aggregation where DOJ between '1990-05-01' and '1990-05-31';
++------+-------+------------+---------+--------+--------+-----------+-----------+
+| eno  | ename | DOJ        | role    | deptno | salary | newsalary | incsalary |
++------+-------+------------+---------+--------+--------+-----------+-----------+
+|    5 | Meera | 1990-05-18 | manager |     30 |  45000 |     51750 |      NULL |
++------+-------+------------+---------+--------+--------+-----------+-----------+
+1 row in set (0.00 sec)
+
+
+

@@ -1,0 +1,611 @@
+mysql> use practice1;
+Database changed
+mysql> create table student_profile(Rollno int,Name char(30),DOB int,Department char(22),City varchar(30));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc student_profile;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Rollno     | int         | YES  |     | NULL    |       |
+| Name       | char(30)    | YES  |     | NULL    |       |
+| DOB        | int         | YES  |     | NULL    |       |
+| Department | char(22)    | YES  |     | NULL    |       |
+| City       | varchar(30) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student_profile add mark1 int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table student_profile add mark2 int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student_profile;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Rollno     | int         | YES  |     | NULL    |       |
+| Name       | char(30)    | YES  |     | NULL    |       |
+| DOB        | int         | YES  |     | NULL    |       |
+| Department | char(22)    | YES  |     | NULL    |       |
+| City       | varchar(30) | YES  |     | NULL    |       |
+| mark1      | int         | YES  |     | NULL    |       |
+| mark2      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+mysql> alter table student_profile modify column DOB date;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student_profile;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Rollno     | int         | YES  |     | NULL    |       |
+| Name       | char(30)    | YES  |     | NULL    |       |
+| DOB        | date        | YES  |     | NULL    |       |
+| Department | char(22)    | YES  |     | NULL    |       |
+| City       | varchar(30) | YES  |     | NULL    |       |
+| mark1      | int         | YES  |     | NULL    |       |
+| mark2      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> insert into student_profile values('001','Sindhu','2001-03-13','FullStack','Coimbatore','100','100'),('002','Divya','1991-05-12','FullStack','Covai','90','98');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> desc student_profile;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| Rollno     | int         | YES  |     | NULL    |       |
+| Name       | char(30)    | YES  |     | NULL    |       |
+| DOB        | date        | YES  |     | NULL    |       |
+| Department | char(22)    | YES  |     | NULL    |       |
+| City       | varchar(30) | YES  |     | NULL    |       |
+| mark1      | int         | YES  |     | NULL    |       |
+| mark2      | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student_profile;
++--------+--------+------------+------------+------------+-------+-------+
+| Rollno | Name   | DOB        | Department | City       | mark1 | mark2 |
++--------+--------+------------+------------+------------+-------+-------+
+|      1 | Sindhu | 2001-03-13 | FullStack  | Coimbatore |   100 |   100 |
+|      2 | Divya  | 1991-05-12 | FullStack  | Covai      |    90 |    98 |
++--------+--------+------------+------------+------------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into student_profile values('003','Arun','1994-10-20','Fullstack','veerapandi','90','100'),('004','Abi','2001-10-20','Fullstack','Thirunelveli','90','100'),('005','Sakthi','2001-10-20','Fullstack','Madurai','90','100');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+------------+------------+--------------+-------+-------+
+| Rollno | Name   | DOB        | Department | City         | mark1 | mark2 |
++--------+--------+------------+------------+--------------+-------+-------+
+|      1 | Sindhu | 2001-03-13 | FullStack  | Coimbatore   |   100 |   100 |
+|      2 | Divya  | 1991-05-12 | FullStack  | Covai        |    90 |    98 |
+|      3 | Arun   | 1994-10-20 | Fullstack  | veerapandi   |    90 |   100 |
+|      4 | Abi    | 2001-10-20 | Fullstack  | Thirunelveli |    90 |   100 |
+|      5 | Sakthi | 2001-10-20 | Fullstack  | Madurai      |    90 |   100 |
++--------+--------+------------+------------+--------------+-------+-------+
+5 rows in set (0.00 sec)
+mysql>  alter table student_profile add TotalMark int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+------------+------------+--------------+-------+-------+-----------+
+| Rollno | Name   | DOB        | Department | City         | mark1 | mark2 | TotalMark |
++--------+--------+------------+------------+--------------+-------+-------+-----------+
+|      1 | Sindhu | 2001-03-13 | FullStack  | Coimbatore   |   100 |   100 |      NULL |
+|      2 | Divya  | 1991-05-12 | FullStack  | Covai        |    90 |    98 |      NULL |
+|      3 | Arun   | 1994-10-20 | Fullstack  | veerapandi   |    90 |   100 |      NULL |
+|      4 | Abi    | 2001-10-20 | Fullstack  | Thirunelveli |    90 |   100 |      NULL |
+|      5 | Sakthi | 2001-10-20 | Fullstack  | Madurai      |    90 |   100 |      NULL |
++--------+--------+------------+------------+--------------+-------+-------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student_profile change DOB dateofbirth date;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+--------------+-------+-------+-----------+
+| Rollno | Name   | dateofbirth | Department | City         | mark1 | mark2 | TotalMark |
++--------+--------+-------------+------------+--------------+-------+-------+-----------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore   |   100 |   100 |      NULL |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai        |    90 |    98 |      NULL |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi   |    90 |   100 |      NULL |
+|      4 | Abi    | 2001-10-20  | Fullstack  | Thirunelveli |    90 |   100 |      NULL |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai      |    90 |   100 |      NULL |
++--------+--------+-------------+------------+--------------+-------+-------+-----------+
+5 rows in set (0.00 sec)
+
+mysql> delete from student_profile where Rollno=4;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark |
++--------+--------+-------------+------------+------------+-------+-------+-----------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |   100 |   100 |      NULL |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |      NULL |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |      NULL |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |      NULL |
++--------+--------+-------------+------------+------------+-------+-------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> alter table student_profile add Average int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table student_profile add Grade int;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |   100 |   100 |      NULL |    NULL |  NULL |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |      NULL |    NULL |  NULL |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |      NULL |    NULL |  NULL |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |      NULL |    NULL |  NULL |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+mysql> update student_profile set TotalMark=mark1+mark2;
+Query OK, 4 rows affected (0.01 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |   100 |   100 |       200 |    NULL |  NULL |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |    NULL |  NULL |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |    NULL |  NULL |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |    NULL |  NULL |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+mysql> update student_profile set Average=TotalMark/3;
+Query OK, 4 rows affected (0.01 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |   100 |   100 |       200 |      67 |  NULL |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      63 |  NULL |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      63 |  NULL |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      63 |  NULL |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+mysql> desc student_profile;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Rollno      | int         | YES  |     | NULL    |       |
+| Name        | char(30)    | YES  |     | NULL    |       |
+| dateofbirth | date        | YES  |     | NULL    |       |
+| Department  | char(22)    | YES  |     | NULL    |       |
+| City        | varchar(30) | YES  |     | NULL    |       |
+| mark1       | int         | YES  |     | NULL    |       |
+| mark2       | int         | YES  |     | NULL    |       |
+| TotalMark   | int         | YES  |     | NULL    |       |
+| Average     | int         | YES  |     | NULL    |       |
+| Grade       | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> alter table student_profile modify Grade char(20);
+Query OK, 4 rows affected (0.04 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> update Student_profile set Grade='PASS' where mark1>=40 and mark2>=40;
+Query OK, 4 rows affected (0.01 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |   100 |   100 |       200 |      67 | PASS  |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      63 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      63 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      63 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+mysql> update Student_profile set Grade='PASS' where mark1>=40 and mark2>=40;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 3  Changed: 0  Warnings: 0
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |    35 |   100 |       135 |      68 | PASS  |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+mysql> select * from student_profile where city = 'veerapandi';
++--------+------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      3 | Arun | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
++--------+------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from student_profile where mark1 > 90;
+Empty set (0.00 sec)
+
+mysql> select * from student_profile where mark1 > 80;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from student_profile where mark1 >= 90;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select rollno,name,mark2 from student_profile where mark2<40;
+Empty set (0.00 sec)
+
+mysql> select rollno,name,mark2 from student_profile where mark2<90;
+Empty set (0.00 sec)
+
+mysql> select rollno,name,mark2 from student_profile where mark2<100;
++--------+-------+-------+
+| rollno | name  | mark2 |
++--------+-------+-------+
+|      2 | Divya |    98 |
++--------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select rollno,name,mark2 from student_profile where dateofbirth < '1994-08-27';
++--------+-------+-------+
+| rollno | name  | mark2 |
++--------+-------+-------+
+|      2 | Divya |    98 |
++--------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select rollno,name,dateofbirth from student_profile where dateofbirth < '1994-08-27';
++--------+-------+-------------+
+| rollno | name  | dateofbirth |
++--------+-------+-------------+
+|      2 | Divya | 1991-05-12  |
++--------+-------+-------------+
+1 row in set (0.00 sec)
+
+mysql> select rollno,name,dateofbirth from student_profile where dateofbirth <> '1994-10-20';
++--------+--------+-------------+
+| rollno | name   | dateofbirth |
++--------+--------+-------------+
+|      1 | Sindhu | 2001-03-13  |
+|      2 | Divya  | 1991-05-12  |
+|      5 | Sakthi | 2001-10-20  |
++--------+--------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> create table customer(custid varchar(20),custname varchar(30),proid varchar(20),location varchar(30));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc customer;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| custid   | varchar(20) | YES  |     | NULL    |       |
+| custname | varchar(30) | YES  |     | NULL    |       |
+| proid    | varchar(20) | YES  |     | NULL    |       |
+| location | varchar(30) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> insert into customer values('c001','Siva Kumar','p121','Coimbatore'),('c002','Manoj','p234','Delhi'),('c004','Dhanvanthri','p367','Thailand'),('c102','Sethuraj','p123','Melbourne');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> insert into customer values('c007','Abhi','p121','Coimbatore'),('c002','Arun','p234','Sharjah'),('c004','Dhanvanthri','p789','Thailand'),('c112','Meera','p123','Thrissur');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from customer;
++--------+-------------+-------+------------+
+| custid | custname    | proid | location   |
++--------+-------------+-------+------------+
+| c001   | Siva Kumar  | p121  | Coimbatore |
+| c002   | Manoj       | p234  | Delhi      |
+| c004   | Dhanvanthri | p367  | Thailand   |
+| c102   | Sethuraj    | p123  | Melbourne  |
+| c007   | Abhi        | p121  | Coimbatore |
+| c002   | Arun        | p234  | Sharjah    |
+| c004   | Dhanvanthri | p789  | Thailand   |
+| c112   | Meera       | p123  | Thrissur   |
++--------+-------------+-------+------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from customer where location like 'C%';
++--------+------------+-------+------------+
+| custid | custname   | proid | location   |
++--------+------------+-------+------------+
+| c001   | Siva Kumar | p121  | Coimbatore |
+| c007   | Abhi       | p121  | Coimbatore |
++--------+------------+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customer where location like '%e';
++--------+------------+-------+------------+
+| custid | custname   | proid | location   |
++--------+------------+-------+------------+
+| c001   | Siva Kumar | p121  | Coimbatore |
+| c102   | Sethuraj   | p123  | Melbourne  |
+| c007   | Abhi       | p121  | Coimbatore |
++--------+------------+-------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from customer where location like '___i%';
++--------+-------------+-------+----------+
+| custid | custname    | proid | location |
++--------+-------------+-------+----------+
+| c004   | Dhanvanthri | p367  | Thailand |
+| c004   | Dhanvanthri | p789  | Thailand |
+| c112   | Meera       | p123  | Thrissur |
++--------+-------------+-------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from customer where location like 'm_l%';
++--------+----------+-------+-----------+
+| custid | custname | proid | location  |
++--------+----------+-------+-----------+
+| c102   | Sethuraj | p123  | Melbourne |
++--------+----------+-------+-----------+
+1 row in set (0.00 sec)
+
+mysql> select * from customer where location not like 'm_l%';
++--------+-------------+-------+------------+
+| custid | custname    | proid | location   |
++--------+-------------+-------+------------+
+| c001   | Siva Kumar  | p121  | Coimbatore |
+| c002   | Manoj       | p234  | Delhi      |
+| c004   | Dhanvanthri | p367  | Thailand   |
+| c007   | Abhi        | p121  | Coimbatore |
+| c002   | Arun        | p234  | Sharjah    |
+| c004   | Dhanvanthri | p789  | Thailand   |
+| c112   | Meera       | p123  | Thrissur   |
++--------+-------------+-------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from customer where location not like '___i%';
++--------+------------+-------+------------+
+| custid | custname   | proid | location   |
++--------+------------+-------+------------+
+| c001   | Siva Kumar | p121  | Coimbatore |
+| c002   | Manoj      | p234  | Delhi      |
+| c102   | Sethuraj   | p123  | Melbourne  |
+| c007   | Abhi       | p121  | Coimbatore |
+| c002   | Arun       | p234  | Sharjah    |
++--------+------------+-------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from customer where location not like 'C%';
++--------+-------------+-------+-----------+
+| custid | custname    | proid | location  |
++--------+-------------+-------+-----------+
+| c002   | Manoj       | p234  | Delhi     |
+| c004   | Dhanvanthri | p367  | Thailand  |
+| c102   | Sethuraj    | p123  | Melbourne |
+| c002   | Arun        | p234  | Sharjah   |
+| c004   | Dhanvanthri | p789  | Thailand  |
+| c112   | Meera       | p123  | Thrissur  |
++--------+-------------+-------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from customer;
++--------+-------------+-------+------------+
+| custid | custname    | proid | location   |
++--------+-------------+-------+------------+
+| c001   | Siva Kumar  | p121  | Coimbatore |
+| c002   | Manoj       | p234  | Delhi      |
+| c004   | Dhanvanthri | p367  | Thailand   |
+| c102   | Sethuraj    | p123  | Melbourne  |
+| c007   | Abhi        | p121  | Coimbatore |
+| c002   | Arun        | p234  | Sharjah    |
+| c004   | Dhanvanthri | p789  | Thailand   |
+| c112   | Meera       | p123  | Thrissur   |
++--------+-------------+-------+------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from customer where custname ="Dhanvanthri" and location="Thailand";
++--------+-------------+-------+----------+
+| custid | custname    | proid | location |
++--------+-------------+-------+----------+
+| c004   | Dhanvanthri | p367  | Thailand |
+| c004   | Dhanvanthri | p789  | Thailand |
++--------+-------------+-------+----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customer where custname ="Abhi" or location="Delhi";
++--------+----------+-------+------------+
+| custid | custname | proid | location   |
++--------+----------+-------+------------+
+| c002   | Manoj    | p234  | Delhi      |
+| c007   | Abhi     | p121  | Coimbatore |
++--------+----------+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customer;
++--------+-------------+-------+------------+
+| custid | custname    | proid | location   |
++--------+-------------+-------+------------+
+| c001   | Siva Kumar  | p121  | Coimbatore |
+| c002   | Manoj       | p234  | Delhi      |
+| c004   | Dhanvanthri | p367  | Thailand   |
+| c102   | Sethuraj    | p123  | Melbourne  |
+| c007   | Abhi        | p121  | Coimbatore |
+| c002   | Arun        | p234  | Sharjah    |
+| c004   | Dhanvanthri | p789  | Thailand   |
+| c112   | Meera       | p123  | Thrissur   |
++--------+-------------+-------+------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from customer where location in ('Chennai','Coimbatore','Thailand','Tripur','Salem','Pollachi');
++--------+-------------+-------+------------+
+| custid | custname    | proid | location   |
++--------+-------------+-------+------------+
+| c001   | Siva Kumar  | p121  | Coimbatore |
+| c004   | Dhanvanthri | p367  | Thailand   |
+| c007   | Abhi        | p121  | Coimbatore |
+| c004   | Dhanvanthri | p789  | Thailand   |
++--------+-------------+-------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |    35 |   100 |       135 |      68 | PASS  |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from student_profile where mark1 in (40,50,60,70,80,90);
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select name from student_profile where mark1 in (40,50,60,70,80,90);
++--------+
+| name   |
++--------+
+| Divya  |
+| Arun   |
+| Sakthi |
++--------+
+3 rows in set (0.00 sec)
+mysql> select name,mark1 from student_profile where mark1 in (40,50,60,70,80,90);
++--------+-------+
+| name   | mark1 |
++--------+-------+
+| Divya  |    90 |
+| Arun   |    90 |
+| Sakthi |    90 |
++--------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select name,mark1 from student_profile where mark1 NOT in (40,50,60,70,80,90);
++--------+-------+
+| name   | mark1 |
++--------+-------+
+| Sindhu |    35 |
++--------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |    35 |   100 |       135 |      68 | PASS  |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select Rollno,Name,City,mark2 from student_profile where mark2 between 95 and 98;
++--------+-------+-------+-------+
+| Rollno | Name  | City  | mark2 |
++--------+-------+-------+-------+
+|      2 | Divya | Covai |    98 |
++--------+-------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> select Rollno,Name,City,mark2 from student_profile where mark2 between 98 and 100;
++--------+--------+------------+-------+
+| Rollno | Name   | City       | mark2 |
++--------+--------+------------+-------+
+|      1 | Sindhu | Coimbatore |   100 |
+|      2 | Divya  | Covai      |    98 |
+|      3 | Arun   | veerapandi |   100 |
+|      5 | Sakthi | Madurai    |   100 |
++--------+--------+------------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select Rollno,Name,City,mark2 from student_profile where Name between 'Divya' and 'Sakthi';
++--------+--------+---------+-------+
+| Rollno | Name   | City    | mark2 |
++--------+--------+---------+-------+
+|      2 | Divya  | Covai   |    98 |
+|      5 | Sakthi | Madurai |   100 |
++--------+--------+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from customer;
++--------+-------------+-------+------------+
+| custid | custname    | proid | location   |
++--------+-------------+-------+------------+
+| c001   | Siva Kumar  | p121  | Coimbatore |
+| c002   | Manoj       | p234  | Delhi      |
+| c004   | Dhanvanthri | p367  | Thailand   |
+| c102   | Sethuraj    | p123  | Melbourne  |
+| c007   | Abhi        | p121  | Coimbatore |
+| c002   | Arun        | p234  | Sharjah    |
+| c004   | Dhanvanthri | p789  | Thailand   |
+| c112   | Meera       | p123  | Thrissur   |
++--------+-------------+-------+------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from customer where custname between 'Manoj' and 'Arun';
+Empty set (0.00 sec)
+
+mysql> select custname from customer where custname between 'Manoj' and 'Arun';
+Empty set (0.00 sec)
+
+mysql> select * from student_profile;
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+| Rollno | Name   | dateofbirth | Department | City       | mark1 | mark2 | TotalMark | Average | Grade |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+|      1 | Sindhu | 2001-03-13  | FullStack  | Coimbatore |    35 |   100 |       135 |      68 | PASS  |
+|      2 | Divya  | 1991-05-12  | FullStack  | Covai      |    90 |    98 |       188 |      94 | PASS  |
+|      3 | Arun   | 1994-10-20  | Fullstack  | veerapandi |    90 |   100 |       190 |      95 | PASS  |
+|      5 | Sakthi | 2001-10-20  | Fullstack  | Madurai    |    90 |   100 |       190 |      95 | PASS  |
++--------+--------+-------------+------------+------------+-------+-------+-----------+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select rollno,name,dateofbirth from student_profile where dateofbirth between '1994-10-20' and '2001-03-13';
++--------+--------+-------------+
+| rollno | name   | dateofbirth |
++--------+--------+-------------+
+|      1 | Sindhu | 2001-03-13  |
+|      3 | Arun   | 1994-10-20  |
++--------+--------+-------------+
+2 rows in set (0.00 sec)
+
+mysql>

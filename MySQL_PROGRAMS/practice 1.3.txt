@@ -1,0 +1,97 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| employee           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| practice1          |
+| practice3          |
+| student            |
+| student_details    |
+| sys                |
+| tweak              |
++--------------------+
+10 rows in set (0.00 sec)
+mysql> use practice3;
+Database changed
+mysql> select * from product;
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| Black Shirt | Clothing |   900 | Puma  |    4.8 |
++-------------+----------+-------+-------+--------+
+1 row in set (0.00 sec)
+mysql> insert into product values('white Shirt','Clothing','750','Puma','5.0'),('black jeans','Clothing','700','nick','4.0'),('gray jeans','Clothing','550','prisma','3.8'),('bourbon','cookies','300','cadbury','5.0'),('bourbon black','cookies','250','cadbury','4.9'),('bourbon dark','cookies','650','britania','4.6'),('potatto chips','snacks','150','bingo','2.4'),('curlyfries chips','snacks','100','lays','3.5');
+Query OK, 8 rows affected (0.04 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> select * from product;
++------------------+----------+-------+----------+--------+
+| name             | category | price | brand    | rating |
++------------------+----------+-------+----------+--------+
+| Black Shirt      | Clothing |   900 | Puma     |    4.8 |
+| white Shirt      | Clothing |   750 | Puma     |      5 |
+| black jeans      | Clothing |   700 | nick     |      4 |
+| gray jeans       | Clothing |   550 | prisma   |    3.8 |
+| bourbon          | cookies  |   300 | cadbury  |      5 |
+| bourbon black    | cookies  |   250 | cadbury  |    4.9 |
+| bourbon dark     | cookies  |   650 | britania |    4.6 |
+| potatto chips    | snacks   |   150 | bingo    |    2.4 |
+| curlyfries chips | snacks   |   100 | lays     |    3.5 |
++------------------+----------+-------+----------+--------+
+9 rows in set (0.00 sec)
+mysql> select * from product where brand like'Puma%';
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| Black Shirt | Clothing |   900 | Puma  |    4.8 |
+| white Shirt | Clothing |   750 | Puma  |      5 |
++-------------+----------+-------+-------+--------+
+2 rows in set (0.00 sec)
+mysql> select * from product where name like '%jeans';
++-------------+----------+-------+--------+--------+
+| name        | category | price | brand  | rating |
++-------------+----------+-------+--------+--------+
+| black jeans | Clothing |   700 | nick   |      4 |
+| gray jeans  | Clothing |   550 | prisma |    3.8 |
++-------------+----------+-------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from product where name like 'bourbon%';
++---------------+----------+-------+----------+--------+
+| name          | category | price | brand    | rating |
++---------------+----------+-------+----------+--------+
+| bourbon       | cookies  |   300 | cadbury  |      5 |
+| bourbon black | cookies  |   250 | cadbury  |    4.9 |
+| bourbon dark  | cookies  |   650 | britania |    4.6 |
++---------------+----------+-------+----------+--------+
+3 rows in set (0.00 sec)
+mysql> select * from product where name like '%chips';
++------------------+----------+-------+-------+--------+
+| name             | category | price | brand | rating |
++------------------+----------+-------+-------+--------+
+| potatto chips    | snacks   |   150 | bingo |    2.4 |
+| curlyfries chips | snacks   |   100 | lays  |    3.5 |
++------------------+----------+-------+-------+--------+
+2 rows in set (0.00 sec)
+mysql> select * from product where name like'%sh_r_';
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| Black Shirt | Clothing |   900 | Puma  |    4.8 |
+| white Shirt | Clothing |   750 | Puma  |      5 |
++-------------+----------+-------+-------+--------+
+2 rows in set (0.00 sec)
+mysql> select * from product where rating>4;
++---------------+----------+-------+----------+--------+
+| name          | category | price | brand    | rating |
++---------------+----------+-------+----------+--------+
+| Black Shirt   | Clothing |   900 | Puma     |    4.8 |
+| white Shirt   | Clothing |   750 | Puma     |      5 |
+| bourbon       | cookies  |   300 | cadbury  |      5 |
+| bourbon black | cookies  |   250 | cadbury  |    4.9 |
+| bourbon dark  | cookies  |   650 | britania |    4.6 |
++---------------+----------+-------+----------+--------+
+5 rows in set (0.00 sec)

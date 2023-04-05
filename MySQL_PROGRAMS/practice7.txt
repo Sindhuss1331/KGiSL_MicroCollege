@@ -1,0 +1,89 @@
+mysql> create table Sailor(SID int,NAME varchar(30),DOB date,GENDER char(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc Sailor;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| SID    | int         | YES  |     | NULL    |       |
+| NAME   | varchar(30) | YES  |     | NULL    |       |
+| DOB    | date        | YES  |     | NULL    |       |
+| GENDER | char(20)    | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql>  insert into Sailor values(101,'Sindhu','2001-03-13','Female'),(102,'Santhosh','1997-09-30','male');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> alter table Sailor add primary key(SID);
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Sailor;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| SID    | int         | NO   | PRI | NULL    |       |
+| NAME   | varchar(30) | YES  |     | NULL    |       |
+| DOB    | date        | YES  |     | NULL    |       |
+| GENDER | char(20)    | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Sailor;
++-----+----------+------------+--------+
+| SID | NAME     | DOB        | GENDER |
++-----+----------+------------+--------+
+| 101 | Sindhu   | 2001-03-13 | Female |
+| 102 | Santhosh | 1997-09-30 | male   |
++-----+----------+------------+--------+
+2 rows in set (0.00 sec)
+mysql> create table Boat(BID int primary key,Btype enum('D','S'),Bname varchar(30) unique key,Color varchar(20));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc Boat;
++-------+---------------+------+-----+---------+-------+
+| Field | Type          | Null | Key | Default | Extra |
++-------+---------------+------+-----+---------+-------+
+| BID   | int           | NO   | PRI | NULL    |       |
+| Btype | enum('D','S') | YES  |     | NULL    |       |
+| Bname | varchar(30)   | YES  | UNI | NULL    |       |
+| Color | varchar(20)   | YES  |     | NULL    |       |
++-------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql> create table Sails(SID int primary key,BID int,DOT date,SHIFT char(2) check (Shift in('FN','AF')),foreign key(SID) references Sailor(SID),foreign key(BID) references Boat(BID));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc Sails;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| SID   | int     | NO   | PRI | NULL    |       |
+| BID   | int     | YES  | MUL | NULL    |       |
+| DOT   | date    | YES  |     | NULL    |       |
+| SHIFT | char(2) | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql> insert into Boat values(01,'D','fishingboat','white'),(02,'S','Andiamo','brown');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from Boat;
++-----+-------+-------------+-------+
+| BID | Btype | Bname       | Color |
++-----+-------+-------------+-------+
+|   1 | D     | fishingboat | white |
+|   2 | S     | Andiamo     | brown |
++-----+-------+-------------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into Sails values(101,2,'2001-03-13','FN');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Sails;
++-----+------+------------+-------+
+| SID | BID  | DOT        | SHIFT |
++-----+------+------------+-------+
+| 101 |    2 | 2001-03-13 | FN    |
++-----+------+------------+-------+
+1 row in set (0.00 sec)

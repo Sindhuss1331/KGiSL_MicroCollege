@@ -1,0 +1,84 @@
+
+mysql> select * from aggregation;
++------+--------+------------+----------+--------+--------+-----------+
+| eno  | ename  | DOJ        | role     | deptno | salary | newsalary |
++------+--------+------------+----------+--------+--------+-----------+
+|    1 | Abii   | 1999-02-15 | analyst  |     10 |  20000 |     23000 |
+|    2 | Arun   | 1980-06-30 | analyst  |     20 |  30000 |     34500 |
+|    3 | Sankar | 1981-03-28 | clerks   |     10 |  45000 |     51750 |
+|    4 | Sudha  | 1979-03-30 | salesman |     20 |  18000 |     20700 |
+|    4 | Sudha  | 1986-12-31 | salesman |     10 |  18000 |     20700 |
+|    5 | Meera  | 1990-05-18 | manager  |     30 |  45000 |     51750 |
+|    6 | Uma    | 1078-06-23 | hr       |     30 |  50000 |     57500 |
++------+--------+------------+----------+--------+--------+-----------+
+7 rows in set (0.00 sec)
+mysql> select * from dept;
++--------+------------+-----------+
+| deptno | dep_name   | dep_loc   |
++--------+------------+-----------+
+|     10 | analyst    | bangalore |
+|     20 | accountent | chennai   |
++--------+------------+-----------+
+2 rows in set (0.00 sec)
+mysql> select * from salgrade;
++-------+---------+---------+
+| grade | min_sal | max_sal |
++-------+---------+---------+
+|     1 |   41000 |   50000 |
+|     2 |    7000 |   40000 |
++-------+---------+---------+
+2 rows in set (0.00 sec)
+mysql> select a.ename,a.role,a.salary,d.dep_name,a.deptno from aggregation as a join dept as d on a.deptno=d.deptno;
++--------+----------+--------+------------+--------+
+| ename  | role     | salary | dep_name   | deptno |
++--------+----------+--------+------------+--------+
+| Abii   | analyst  |  20000 | analyst    |     10 |
+| Arun   | analyst  |  30000 | accountent |     20 |
+| Sankar | clerks   |  45000 | analyst    |     10 |
+| Sudha  | salesman |  18000 | accountent |     20 |
+| Sudha  | salesman |  18000 | analyst    |     10 |
++--------+----------+--------+------------+--------+
+5 rows in set (0.00 sec)
+mysql> select role from aggregation inner join dept on aggregation.deptno=dept.deptno where dept.dep_loc='chennai';
++----------+
+| role     |
++----------+
+| analyst  |
+| salesman |
++----------+
+2 rows in set (0.00 sec)
+
+mysql> select a.ename,a.salary,(select grade from salgrade where a.salary between min_sal and max_sal) as salgrade from aggregation as a;
++--------+--------+----------+
+| ename  | salary | salgrade |
++--------+--------+----------+
+| Abii   |  20000 |        2 |
+| Arun   |  30000 |        2 |
+| Sankar |  45000 |        1 |
+| Sudha  |  18000 |        2 |
+| Sudha  |  18000 |        2 |
+| Meera  |  45000 |        1 |
+| Uma    |  50000 |        1 |
++--------+--------+----------+
+7 rows in set (0.00 sec)
+mysql> select count(eno),a.deptno,d.dep_name from aggregation as a join dept as d on a.deptno=d.deptno group by deptno;
++------------+--------+------------+
+| count(eno) | deptno | dep_name   |
++------------+--------+------------+
+|          3 |     10 | analyst    |
+|          2 |     20 | accountent |
++------------+--------+------------+
+2 rows in set (0.00 sec)
+mysql> select e.eno,e.ename,d.dep_name,d.dep_loc,s.grade from aggregation e inner join dept d on e.deptno=d.deptno inner join salgrade s on e.salary between s.min_sal and s.max_sal;
++------+--------+------------+-----------+-------+
+| eno  | ename  | dep_name   | dep_loc   | grade |
++------+--------+------------+-----------+-------+
+|    1 | Abii   | analyst    | bangalore |     2 |
+|    2 | Arun   | accountent | chennai   |     2 |
+|    3 | Sankar | analyst    | bangalore |     1 |
+|    4 | Sudha  | accountent | chennai   |     2 |
+|    4 | Sudha  | analyst    | bangalore |     2 |
++------+--------+------------+-----------+-------+
+5 rows in set (0.00 sec)
+mysql> select aggregation.deptno,dept.dep_name from aggregation  left join dept on aggregation.deptno=dept.deptno group by aggregation.deptno having count(aggregation.eno)=0;
+Empty set (0.01 sec)

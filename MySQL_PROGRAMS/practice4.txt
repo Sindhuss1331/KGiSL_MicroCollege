@@ -1,0 +1,77 @@
+mysql> select * from product2 where category='clothing' and price<700;
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| black shirt | clothing |   500 | puma  |      5 |
+| black shirt | clothing |   600 | denim |      5 |
++-------------+----------+-------+-------+--------+
+2 rows in set (0.00 sec)
+mysql> select * from product2 where brand='denim' and rating>4;
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| black shirt | clothing |   600 | denim |      5 |
++-------------+----------+-------+-------+--------+
+1 row in set (0.00 sec)
+mysql> select * from product2 where price<=1000 and rating>4.0;
++-------------+-------------+-------+---------+--------+
+| name        | category    | price | brand   | rating |
++-------------+-------------+-------+---------+--------+
+| black shirt | clothing    |   500 | puma    |      5 |
+| black shirt | clothing    |   600 | denim   |      5 |
+| cake        | Sachertorte |   300 | cadbury |      5 |
++-------------+-------------+-------+---------+--------+
+3 rows in set (0.00 sec)
+mysql> select * from product2 where price<=1000 and rating>4.0;
++-------------+-------------+-------+---------+--------+
+| name        | category    | price | brand   | rating |
++-------------+-------------+-------+---------+--------+
+| black shirt | clothing    |   500 | puma    |      5 |
+| black shirt | clothing    |   600 | denim   |      5 |
+| cake        | Sachertorte |   300 | cadbury |      5 |
++-------------+-------------+-------+---------+--------+
+3 rows in set (0.00 sec)
+mysql> select * from product2 where rating>3.6 and price<1000 and brand='puma';
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| black shirt | clothing |   500 | puma  |      5 |
++-------------+----------+-------+-------+--------+
+1 row in set (0.01 sec)
+mysql> select * from product2 where brand='puma' or 'denim' or 'nike';
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| black shirt | clothing |   500 | puma  |      5 |
++-------------+----------+-------+-------+--------+
+1 row in set, 2 warnings (0.00 sec)
+mysql> select * from product2 where brand='redmi' and rating>4 or brand='oneplus';
++----------+----------+-------+---------+--------+
+| name     | category | price | brand   | rating |
++----------+----------+-------+---------+--------+
+| note 6   | phone    | 16000 | redmi   |      5 |
+| nord ce2 | phone    | 18999 | oneplus |      5 |
++----------+----------+-------+---------+--------+
+2 rows in set (0.00 sec)
+mysql> select * from product2 where (brand='cadbury' or brand='britannia') and rating>4.0;
++------+-------------+-------+---------+--------+
+| name | category    | price | brand   | rating |
++------+-------------+-------+---------+--------+
+| cake | Sachertorte |   300 | cadbury |      5 |
++------+-------------+-------+---------+--------+
+1 row in set (0.00 sec)
+mysql> select * from product2 where brand='puma' and rating>3.5 or brand='denim' and rating>4.0;
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| black shirt | clothing |   500 | puma  |      5 |
+| black shirt | clothing |   600 | denim |      5 |
++-------------+----------+-------+-------+--------+
+2 rows in set (0.00 sec)
+mysql> select * from product2 where name='black shirt' and brand='puma' or 'nick' or 'livis';
++-------------+----------+-------+-------+--------+
+| name        | category | price | brand | rating |
++-------------+----------+-------+-------+--------+
+| black shirt | clothing |   500 | puma  |      5 |
++-------------+----------+-------+-------+--------+
+1 row in set, 2 warnings (0.00 sec)

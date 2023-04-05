@@ -1,0 +1,158 @@
+mysql> select count(*) as "Total no.of Employees" from aggregation;
++-----------------------+
+| Total no.of Employees |
++-----------------------+
+|                     7 |
++-----------------------+
+1 row in set (0.01 sec)
+7 rows in set (0.00 sec)
+mysql> select sum(salary) from aggregation;
++-------------+
+| sum(salary) |
++-------------+
+|      226000 |
++-------------+
+1 row in set (0.00 sec)
+mysql> select max(salary) As "Maximum Salary" from aggregation;
++----------------+
+| Maximum Salary |
++----------------+
+|          50000 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select DOJ from aggregation order by DOJ limit 1;
++------------+
+| DOJ        |
++------------+
+| 1078-06-23 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) As "Ave Sal" from aggregation;
++--------------------+
+| Ave Sal            |
++--------------------+
+| 32285.714285714286 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) As "Max Sal for clerks" from aggregation where role = 'clerks';
++--------------------+
+| Max Sal for clerks |
++--------------------+
+|              45000 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> select max(salary) As "Max Sal for Dept 10" from aggregation where deptno = 20;
++---------------------+
+| Max Sal for Dept 10 |
++---------------------+
+|               30000 |
++---------------------+
+1 row in set (0.00 sec)
+mysql> select max(salary) As "Max Sal for salesman" from aggregation where role =  'salesman';
++----------------------+
+| Max Sal for salesman |
++----------------------+
+|                18000 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) As "Ave sal of manager" from aggregation where role = 'manager';
++--------------------+
+| Ave sal of manager |
++--------------------+
+|              45000 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT sum(salary) as "Total Sal for analyst working in Dept 20" from  aggregation where role = 'analyst' and deptno = 20;
++------------------------------------------+
+| Total Sal for analyst working in Dept 20 |
++------------------------------------------+
+|                                    30000 |
++------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT deptno as "Dept No", COUNT(*) as "No.of Employees" from aggregation group  by deptno;
++---------+-----------------+
+| Dept No | No.of Employees |
++---------+-----------------+
+|      10 |               3 |
+|      20 |               2 |
+|      30 |               2 |
++---------+-----------------+
+3 rows in set (0.00 sec)
+mysql>  SELECT role, COUNT(*) AS Total_Employee from aggregation GROUP BY role;
++----------+----------------+
+| role     | Total_Employee |
++----------+----------------+
+| analyst  |              2 |
+| clerks   |              1 |
+| salesman |              2 |
+| manager  |              1 |
+| hr       |              1 |
++----------+----------------+
+5 rows in set (0.00 sec)
+mysql> SELECT deptno, sum(salary) as total_salary FROM aggregation GROUP BY deptno;
++--------+--------------+
+| deptno | total_salary |
++--------+--------------+
+|     10 |        83000 |
+|     20 |        48000 |
+|     30 |        95000 |
++--------+--------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT deptno, SUM(salary) AS Total_Salary FROM aggregation GROUP BY deptno;
++--------+--------------+
+| deptno | Total_Salary |
++--------+--------------+
+|     10 |        83000 |
+|     20 |        48000 |
+|     30 |        95000 |
++--------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT role, SUM(salary) AS Total_Salary FROM aggregation GROUP BY role;
++----------+--------------+
+| role     | Total_Salary |
++----------+--------------+
+| analyst  |        50000 |
+| clerks   |        45000 |
+| salesman |        36000 |
+| manager  |        45000 |
+| hr       |        50000 |
++----------+--------------+
+5 rows in set (0.00 sec)
+mysql> SELECT role, MIN(salary) FROM aggregation GROUP BY role;
++----------+-------------+
+| role     | MIN(salary) |
++----------+-------------+
+| analyst  |       20000 |
+| clerks   |       45000 |
+| salesman |       18000 |
+| manager  |       45000 |
+| hr       |       50000 |
++----------+-------------+
+5 rows in set (0.01 sec)
+
+mysql> SELECT deptno, COUNT(*) AS Employee_Count FROM aggregation GROUP BY deptno HAVING COUNT(*) > 3;
+Empty set (0.00 sec)
+
+mysql> SELECT role, SUM(salary) AS Total_Salary FROM aggregation group by role having sum(salary) > 2500;
++----------+--------------+
+| role     | Total_Salary |
++----------+--------------+
+| analyst  |        50000 |
+| clerks   |        45000 |
+| salesman |        36000 |
+| manager  |        45000 |
+| hr       |        50000 |
++----------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT role, COUNT(*) AS num_employees FROM aggregation GROUP BY role HAVING COUNT(*) > 3;
+Empty set (0.00 sec)
