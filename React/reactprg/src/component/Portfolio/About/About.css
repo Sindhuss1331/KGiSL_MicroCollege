@@ -1,0 +1,17 @@
+.div_1{
+    width: 80%;
+    box-shadow: 6px 8px 5px 4px; 
+    margin-top: 8%;
+    margin-left: 9%;
+    padding: 5%;
+    background-color: rgb(246, 174, 125);
+}
+.parstyle{
+    font-family:  'Cormorant', serif;
+}
+.abtstyle{
+    font-family: 'Shrikhand', cursive;
+}
+.styleh3{
+    font-family: 'Allerta Stencil', sans-serif;
+}

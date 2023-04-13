@@ -1,0 +1,134 @@
+[
+    {
+        "Id" : "1",
+        "Name" : "HP 15s-fq2717TU Laptop",
+        "Brand" : "HP",
+        "Price" : "₹38,990",
+        "Display" :"15.6 inches",
+        "CPU" : "11th Gen Intel Core i3 1115G4",
+        "GPU" :	"Intel UHD Graphics",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-i8CnXpWCB-w280-h280/hp-15s-fq2717tu-lapt.webp"
+    },
+    {
+        "Id" : "2",
+        "Name" : "Lenovo IdeaPad 82K2022TIN Gaming Laptop",
+        "Brand" : "Lenovo",
+        "Price" : "₹51,990",
+        "Display" :"15.6 inches",
+        "CPU" : "5th Gen AMD Ryzen 5 5600H",
+        "GPU" :	"NVIDIA GeForce GTX 1650",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-ieey2IWzM-w280-h280/lenovo-ideapad-82k20.webp"
+    },
+    {
+        "Id" : "3",
+        "Name" : "Primebook 4G Android Laptop",
+        "Brand" : "Primebook",
+        "Price" : "₹16,990 ",
+        "Display" :"11.6 inches",
+        "CPU" : "MediaTek MTK8788",
+        "GPU" :	"ARM Mali G72",
+        "RAM" :	"4 GB LPDDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-i6vI2Dy7k-w280-h280/primebook-4g-android.webp"
+    },
+    {
+        "Id" : "4",
+        "Name" : "Asus Vivobook 16X 2022 M1603QA-MB502WS Laptop",
+        "Brand" : "Asus Vivobook",
+        "Price" : "₹47,990",
+        "Display" :"16 inches",
+        "CPU" : "5th Gen AMD Ryzen 5 5600H",
+        "GPU" :	"AMD Radeon Vega 7",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-iRUMXjHn3-w280-h280/asus-vivobook-16x-20.webp"
+    },
+    {
+        "Id" : "5",
+        "Name" : "Dell Inspiron 3520 Laptop",
+        "Brand" : "Dell",
+        "Price" : "₹57,490",
+        "Display" :"15.6 inchess",
+        "CPU" : "12th Gen Intel Core i5 1235U",
+        "GPU" :	"Intel Iris Xe Graphics",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-i9jc2meoQ-w280-h280/dell-inspiron-3520-l.webp"
+    },
+    {
+        "Id" : "6",
+        "Name" : "HP Victus 15-fb0888AX Gaming Laptop",
+        "Brand" : "HP Victus",
+        "Price" : "₹57,990",
+        "Display" :"15.6 inches",
+        "CPU" : "5th Gen AMD Ryzen 5 5600H",
+        "GPU" :	"NVIDIA GeForce GTX 1650",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-ivIn7OfJK-w280-h280/hp-victus-15-fb0888a.webp"
+    },
+    {
+        "Id" : "7",
+        "Name" : "HP 15s-du3614TU Laptop",
+        "Brand" : "HP",
+        "Price" : "₹38,990",
+        "Display" :"15.6 inches",
+        "CPU" : "11th Gen Intel Core i3 1115G4",
+        "GPU" :	"Intel Integrated UHD",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-iZIwUapU9-w280-h280/hp-15s-fr4000tu-lapt.webp"
+    },
+    {
+        "Id" : "8",
+        "Name" : "Xiaomi RedmiBook Pro 15 Laptop",
+        "Brand" : "Xiaomi",
+        "Price" : "₹46,990",
+        "Display" :"15.6 inches",
+        "CPU" : "11th Gen Intel Core i5 11300H",
+        "GPU" :	"Intel Iris Xe Graphics",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-iq53umGfe-w280-h280/xiaomi-redmibook-pro.webp"
+    },
+    {
+        "Id" : "9",
+        "Name" : "Asus Zenbook 14 OLED 2023 UM3402YA-KM541WS Laptop",
+        "Brand" : "Asus Zenbook",
+        "Price" : "₹89,990",
+        "Display" :"14 inches",
+        "CPU" : "7th Gen AMD Ryzen 5 7530U",
+        "GPU" :	"AMD Radeon AMD",
+        "RAM" :	"16 GB LPDDR4X",
+        "imageURL" :"https://cdn1.smartprix.com/rx-i70niVd4W-w280-h280/asus-zenbook-14-oled.webp"
+    },
+    {
+        "Id" : "10",
+        "Name" : "Apple MacBook Air 2020 MGND3HN Laptop",
+        "Brand" : "Apple MacBook",
+        "Price" : "₹84,990 ",
+        "Display" :"13.3 inches",
+        "CPU" : "Apple M1",
+        "GPU" :	"Apple M1 Integrated Graphics",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-iXMsgRkkm-w280-h280/apple-macbook-air-20.webp"
+    },
+    {
+        "Id" : "11",
+        "Name" : "Dell Inspiron 3520 Laptop",
+        "Brand" : "Dell",
+        "Price" : "₹57,490",
+        "Display" :"15.6 inchess",
+        "CPU" : "12th Gen Intel Core i5 1235U",
+        "GPU" :	"Intel Iris Xe Graphics",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-i9jc2meoQ-w280-h280/dell-inspiron-3520-l.webp"
+    },
+    {
+        "Id" : "12",
+        "Name" : "Xiaomi RedmiBook Pro 15 Laptop",
+        "Brand" : "Xiaomi",
+        "Price" : "₹46,990",
+        "Display" :"15.6 inches",
+        "CPU" : "11th Gen Intel Core i5 11300H",
+        "GPU" :	"Intel Iris Xe Graphics",
+        "RAM" :	"8 GB DDR4",
+        "imageURL" :"https://cdn1.smartprix.com/rx-iq53umGfe-w280-h280/xiaomi-redmibook-pro.webp"
+    }
+]

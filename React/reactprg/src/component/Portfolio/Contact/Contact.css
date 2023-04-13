@@ -1,0 +1,54 @@
+.bgcontact{
+    padding-bottom: 8%;
+    background-color: rgb(246, 174, 125);
+}
+.getin{
+    font-family: 'Holtwood One SC', serif;
+    margin-top: 5%;
+    font-size: 50px;
+    overflow: hidden;
+}
+
+  
+.fontcol{
+    color: white;
+}
+.vertical{
+    display: inline-block;
+    border-left: 4px solid black;
+    height: 390px;
+    position:absolute;
+    left: 32%;
+    width: auto;
+}
+.inputbox{
+    margin-left: 20%;
+}
+.sizeinput{
+    /* border-radius: 5px; */
+    width: 68%;
+    border: none;
+    border-bottom: 3px solid black;
+    background-color: inherit;
+    outline: none;
+}
+.but{
+    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+}
+.lab{
+    font-weight: bold;
+}
+.styleedding{
+    font-family: 'Vollkorn SC', serif;
+}
+.stylesub{
+    font-family: 'Germania One', cursive;
+}
+/* @media screen and (max-width: 650px){
+
+.vertical{
+    display: none;
+}
+} */

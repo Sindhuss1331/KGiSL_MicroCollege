@@ -1,0 +1,13 @@
+.pink{
+    background-color: pink;
+    height: 100vh;
+}
+.img{
+    height: 100px;
+    width:100px;
+}
+.div_bg{
+    min-width: 50%;
+    max-height: 50vh;
+    margin-top: 70px;
+}

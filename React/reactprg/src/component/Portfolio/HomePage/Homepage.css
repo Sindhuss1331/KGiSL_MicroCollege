@@ -1,0 +1,44 @@
+.home{
+    background-color: rgb(246, 174, 125);
+    height: 91vh;
+    
+}
+
+
+.icons{
+    margin-top: 13%;
+    text-align: center;
+}
+.rou{
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 3%;
+    background-color: white;
+    box-shadow: 0 10px 15px 0 rgba(13, 12, 12, 0.2)
+}
+.con{
+    
+    padding-left: 20%;
+    padding-top: 8%;
+}
+.hii{
+    font-family: 'Holtwood One SC', serif;
+    font-size: 40px;
+}
+.sin{
+    font-family: 'Noto Serif Oriya', serif;
+    font-size: 50px;
+}
+.cfd{
+    font-size: 30px;
+}
+.namestyle{
+    font-family: 'Noto Serif Oriya', serif;
+
+}
+.pic{
+    margin-top: 10%;
+    margin-left: 6%;
+    box-shadow: 0 6px 10px 0 rgba(2.0,2.1,2.0,2.2)
+}

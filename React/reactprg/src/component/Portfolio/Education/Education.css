@@ -1,0 +1,26 @@
+.edu{
+    background-color: rgb(246, 174, 125);
+}
+.imag{
+    margin-top: 15%;
+    padding: 10px;
+    background-color: rgb(246, 174, 125);
+}
+.clgstyle{
+    font-weight: bolder;
+    font-size: 22px;
+    font-family: 'Handlee', cursive;
+}
+.stypara{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Playball', cursive;
+}
+.yearstyle{
+    color: rgb(242, 126, 49);
+    font-family: 'Monoton', cursive;
+}
+.styleedu{
+    font-family: 'Monoton', cursive;
+    color: rgb(242, 126, 49);
+}

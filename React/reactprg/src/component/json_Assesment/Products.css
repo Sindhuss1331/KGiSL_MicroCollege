@@ -1,0 +1,20 @@
+.lap:hover{
+    font-weight: bold;
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+.imglap{
+     max-height: 200px;
+     max-width: 200px;
+}
+.lap{
+    margin-left: 30px;
+    max-width: 330px;
+    max-height: 400px;
+}
+.imglap:hover{
+    transform: scale(1.1);
+}
+.name:hover{
+    text-decoration-line: underline;
+}
