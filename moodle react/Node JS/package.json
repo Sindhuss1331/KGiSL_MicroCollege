@@ -1,0 +1,11 @@
+{
+  "name": "nodesample",
+  "version": "1.0.0",
+  "description": "student details",
+  "main": "index.js",
+  "scripts": {
+    "test": "tree"
+  },
+  "author": "",
+  "license": "ISC"
+}
