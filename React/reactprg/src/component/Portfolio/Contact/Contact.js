@@ -36,7 +36,7 @@ export function Contact(){
                         <div>
                             <h3 className="styleedding"><FontAwesomeIcon icon={faThumbsUp} className="fs-4"/>&nbsp;&nbsp;Follow</h3>
                             <div className="ms-3">
-                                <FontAwesomeIcon icon={faLinkedin} className="fs-3 border border-black p-2 rounded-circle bg-white"/>&nbsp;&nbsp;<FontAwesomeIcon icon={faGithub} className="fs-3 border border-black p-2 rounded-circle bg-white"/>&nbsp;&nbsp;<FontAwesomeIcon icon={faInstagram} className="fs-3 border border-black p-2 rounded-circle bg-white"/>&nbsp;&nbsp;<FontAwesomeIcon icon={faEnvelope} className="fs-3 border border-black p-2 rounded-circle bg-white"/>
+                            <a href="https://www.linkedin.com/in/sindhu-sivakumar-sindhu-sivakumar/"><FontAwesomeIcon icon={faLinkedin} className="fs-3 border border-black p-2 rounded-circle bg-white rou"/></a>&nbsp;&nbsp;<a href="https://github.com/Sindhuss1331"><FontAwesomeIcon icon={faGithub} className="fs-3 border border-black p-2 rounded-circle bg-white rou"/></a>&nbsp;&nbsp;<a href="https://www.instagram.com/"><FontAwesomeIcon icon={faInstagram} className="fs-3 border border-black p-2 rounded-circle bg-white rou"/></a>&nbsp;&nbsp;<Link to='mailto:sindhuss915@gmail.com'><FontAwesomeIcon icon={faEnvelope} className="fs-3 border border-black p-2 rounded-circle bg-white rou"/></Link>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ export function Contact(){
                         <input type="text" className="sizeinput"/><br/><br/>
                         <lable className="lab">Email</lable><br/>
                         <input type="text" className="sizeinput"/><br/><br/>
-                        <lable className="lab">Your Massage</lable><br/>
+                        <lable className="lab">Your Message</lable><br/>
                         <textarea rows="5" cols="40" className="sizeinput bg-white"/><br/>
                         <input type="button" value="Send" className="btn btn-dark but"/>
                     </div>

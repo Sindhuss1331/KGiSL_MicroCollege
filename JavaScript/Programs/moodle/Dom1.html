@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <script>
-        var body = document.getElementsByTagName("body");
-        var div = document.createElement("div");
-        var txt = document.createTextNode("Login Page");
-        var ibox = document.createElement("input");
-        var button = document.createElement("button");
-        var btntxt = document.createTextNode("Click");
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Dom </title>
+        <script>
+            function print()
+            {
 
-        button.append(btntxt);
-        div.append(txt);
-        div.append(ibox);
-        div.append(button);
-        body[0].append(div);
-
-    </script>
-</body>
+                var v1 = document.form1.name.value;
+                alert("Welcome"+v1);
+                document.form1.name1.value = v1;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="form1">
+            <input type="text" name="name"> <br>
+            <input type="text" name="name1"> <br>
+            <input type="button" value="click" onclick="print()">
+        </form>
+    </body>
 </html>

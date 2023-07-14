@@ -19,7 +19,7 @@ export function Products(){
                             <img src={value.imageURL} class="card-img-top h-100 mt-3 imglap" alt="" />
                             <div class="card-body">
                                 <h5 class="card-title name">Name: {value.Name}</h5>
-                                <h6 class="card-subtitle mb-2">Brand: {value.brand}</h6>
+                                <h6 class="card-subtitle mb-2">Brand: {value.Brand}</h6>
                                 <h6 class="card-subtitle mb-2">Price: {value.Price}</h6>
                                 <h6 class="card-subtitle mb-2">Display: {value.Display}</h6>
                                 <h6 class="card-subtitle mb-2">CPU: {value.CPU}</h6>
@@ -27,12 +27,11 @@ export function Products(){
                                 <h6 class="card-subtitle mb-2">RAM: {value.RAM}</h6>
                             </div>
                         </div>
-                        
                     </>
                 ))
             }
             </div>
-            </div>
+        </div>
         </>
     )
 }
